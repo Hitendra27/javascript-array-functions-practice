@@ -95,6 +95,13 @@ const oneMale = characters.some(character => character.gender === 'male');
 console.log(oneMale);
 
 //2. Is there at least one character with blue eyes?
+const blueEyes = characters.some(character => character.eye_color === 'blue');
+console.log(blueEyes);
 
 //3. Is there at least one character taller than 210?
+const tallChar = characters.some(character => character.height > 210);
+console.log(tallChar);
+
 //4. Is there at least one character that has mass less than 50?
+const mass = characters.some(character => character.mass > 50);
+console.log(mass);
