@@ -31,9 +31,28 @@ const characters = [
 
 //***MAP***
 //1. Get array of all names
+const allNames = characters.map(character => character.name);
+//console.log(allNames);
+
 //2. Get array of all heights
+const heights = characters.map(character => character.height);
+//console.log(heights);
+
 //3. Get array of objects with just name and height properties
+const nameAndHeight = characters.map(character => ({
+    name: character.name,
+    height: character.height
+}));
+//console.log(nameAndHeight);
+
 //4. Get array of all first names
+const firstName = characters.map(character => character.name.split(' ')[0]);
+//console.log(firstName);
+const firstNameChar = characters.map(character => ({
+    intial: character.name.split('')[0],
+    fullName: character.name
+}));
+//console.log(firstNameChar);
 
 //***REDUCE***
 //1. Get total mass of all characters
@@ -72,6 +91,10 @@ const femaleCharacter = characters.filter(character => character.gender === 'fem
 
 //***SOME***
 //1. Is there at least one male character?
+const oneMale = characters.some(character => character.gender === 'male');
+console.log(oneMale);
+
 //2. Is there at least one character with blue eyes?
+
 //3. Is there at least one character taller than 210?
 //4. Is there at least one character that has mass less than 50?
