@@ -56,9 +56,28 @@ const firstNameChar = characters.map(character => ({
 
 //***REDUCE***
 //1. Get total mass of all characters
+const massReduce = characters.reduce((acc, cur) => acc + cur.mass ,0);
+//console.log(massReduce);
+
 //2. Get total height of all characters
+const heightReduce = characters.reduce((acc, curr) => acc + curr.height,0);
+//console.log(heightReduce);
+
 //3. Get total number of characters by eye color
+const eyeColorReduce = characters.reduce((acc, curr) => {
+    const color = curr.eye_color;
+    if(acc[color]) {
+        acc[color]++;
+    } else {
+        acc[color] = 1;
+    }
+    return acc;
+}, {})
+//onsole.log(eyeColorReduce);
+
 //4. Get total number of characters in all the character names
+const totalNumberOfCharacters = characters.reduce((acc, curr) => acc + curr.name.length, 0);
+//console.log(totalNumberOfCharacters);
 
 //***FILTER***
 //1. Get characters with mass greater than 100
@@ -98,7 +117,7 @@ const byGender = characters.sort((a, b) => {
     if(a.gender === 'female') return -1;
     return 1;
 });
-console.log(byGender);
+//console.log(byGender);
 
 //***EVERY***
 //1. Does every character have blue eyes?
