@@ -79,9 +79,26 @@ const femaleCharacter = characters.filter(character => character.gender === 'fem
 
 //***SORT***
 //1. Sort by mass
+const byMass = characters.sort((a, b) => a.mass - b.mass);
+//console.log(byMass);
+
 //2. Sort by height
+const byHeight = characters.sort((a, b) => a.height - b.height);
+//console.log(byHeight);
+
 //3. Sort by name
+const byName = characters.sort((a, b) => {
+    if(a.name < b.name) return -1;
+    return 1
+});
+//console.log(byName);
+
 //4. Sort by gender
+const byGender = characters.sort((a, b) => {
+    if(a.gender === 'female') return -1;
+    return 1;
+});
+console.log(byGender);
 
 //***EVERY***
 //1. Does every character have blue eyes?
@@ -92,16 +109,16 @@ const femaleCharacter = characters.filter(character => character.gender === 'fem
 //***SOME***
 //1. Is there at least one male character?
 const oneMale = characters.some(character => character.gender === 'male');
-console.log(oneMale);
+//console.log(oneMale);
 
 //2. Is there at least one character with blue eyes?
 const blueEyes = characters.some(character => character.eye_color === 'blue');
-console.log(blueEyes);
+//console.log(blueEyes);
 
 //3. Is there at least one character taller than 210?
 const tallChar = characters.some(character => character.height > 210);
-console.log(tallChar);
+//console.log(tallChar);
 
 //4. Is there at least one character that has mass less than 50?
 const mass = characters.some(character => character.mass > 50);
-console.log(mass);
+//console.log(mass);
